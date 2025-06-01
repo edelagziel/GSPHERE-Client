@@ -1,0 +1,55 @@
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--neon-blue);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    border-color: transparent;
+}
+
+
+
+
+
+ .action-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 0.25rem;
+            border-radius: 6px;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+            transition: all 0.3s ease;
+        }
