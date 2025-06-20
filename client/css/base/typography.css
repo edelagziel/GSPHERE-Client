@@ -1,18 +1,5 @@
-     .main-contentWraper {        
-            padding: 2rem;
-            min-height: 100vh;
-            max-width: 50vw; /*  רספונסיבי 50% מרוחב המסך */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-       
-
-        .main-header {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
+ 
+        
         .main-title {
             font-size: 2.5rem;
             font-weight: 800;
