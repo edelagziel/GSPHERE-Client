@@ -1,0 +1,14 @@
+/* Utility Classes */
+
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.align-center { align-items: center; justify-content: center; }
+.justify-center { justify-content: center; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 1rem; }
+
+/* Shared gradient background */
+.bg-primary-gradient {
+    background: linear-gradient(180deg, var(--secondary) 0%, var(--accent) 100%);
+}
