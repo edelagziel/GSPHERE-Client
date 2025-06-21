@@ -1,0 +1,7 @@
+.mobile-sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--secondary) 0%, var(--accent) 100%);
+    overflow-y: auto;
+    position: relative;
+}
