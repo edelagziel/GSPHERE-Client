@@ -1,0 +1,8 @@
+
+body {
+    margin: 0;
+    font-family: 'Assistant', sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    direction: rtl;
+  }

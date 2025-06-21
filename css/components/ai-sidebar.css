@@ -1,0 +1,187 @@
+ .ai-sidebar {
+            width: 320px;
+            height: 100vh;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--secondary) 100%);
+            border-left: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .ai-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .ai-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .ai-icon svg {
+            color: white;
+        }
+
+        .ai-title {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ai-subtitle {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .ai-status {
+            background: rgba(57, 255, 20, 0.1);
+            border: 1px solid rgba(57, 255, 20, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--neon-green);
+            animation: pulse 2s infinite;
+        }
+
+     
+
+        .ai-status span {
+            color: var(--neon-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .ai-recommendations {
+            margin-bottom: 2rem;
+        }
+
+        .recommendations-title {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .recommendations-title svg {
+            color: var(--neon-blue);
+        }
+
+        .recommendation-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .recommendation-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--neon-blue);
+            transform: translateX(4px);
+        }
+
+        .rec-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .rec-icon {
+            color: var(--neon-blue);
+        }
+
+        .progress-bar {
+            width: 60px;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+          .rec-title {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .rec-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rec-expert {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .rec-match {
+            color: var(--neon-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .ai-insights {
+            margin-top: 2rem;
+        }
+
+        .insights-title {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+
+           .insight-card {
+            background: rgba(184, 71, 255, 0.1);
+            border: 1px solid rgba(184, 71, 255, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .insight-card p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .insight-card strong {
+            color: var(--neon-purple);
+        }

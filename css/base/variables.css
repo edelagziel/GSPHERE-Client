@@ -1,0 +1,35 @@
+:root {
+    /* Color palette */
+    --primary: #0f0f23;
+    --secondary: #1a1a2e;
+    --accent: #16213e;
+
+    /* Neon colors */
+    --neon-blue: #00d4ff;
+    --neon-Strongblue: #1b4d86;
+    --neon-purple: #b847ff;
+    --neon-Strong-purple: #7919b5;
+    --neon-StrongDark-purple: #3f0364;
+    --neon-green: #39ff14;
+
+    /* Text colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b0b3b8;
+    --text-muted: #8a8d93;
+
+    /* UI colors */
+    --border: #2a2d3a;
+    --hover: #2d3748;
+    --success: #48bb78;
+    --warning: #ed8936;
+    --error: #f56565;
+
+    /* Additional palette */
+    --purple: #764ba2;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #46236a 50%, #76239a 100%);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --text-dark: #333333;
+}
+
+
+
