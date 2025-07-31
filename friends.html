@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSPHERE - Friends</title>
+    <link rel="stylesheet" href="./css/base/variables.css">
+    <link rel="stylesheet" href="./css/base/base.css">
+    <link rel="stylesheet" href="./css/layout/container.css">
+    <link rel="stylesheet" href="./css/base/typography.css">
+    <link rel="stylesheet" href="./css/components/logo.css">
+    <link rel="stylesheet" href="./css/friends.css">
+</head>
+<body>
+    <div class="friends-layout-container">
+        <!-- Left Sidebar -->
+        <aside class="friends-sidebar">
+            <div class="friends-sidebar-content">
+                <div class="friends-sidebar-top">
+                    <div class="friends-logo-section">
+                        <span class="logo-text">
+                            <span id="logoG">G</span><span>SPHERE</span>
+                        </span>
+                        <div class="logo-subtitle">Expert Hub</div>
+                    </div>
+                    <ul class="friends-nav-list">
+                        <li class="friends-nav-item">
+                            <button class="friends-nav-btn friends-nav-btn--active">
+                                <span>Friends</span>
+                            </button>
+                        </li>
+                        <li class="friends-nav-item">
+                            <button class="friends-nav-btn">
+                                <span>Requests</span>
+                            </button>
+                        </li>
+                        <li class="friends-nav-item">
+                            <button class="friends-nav-btn">
+                                <span>Suggestions</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="friends-sidebar-divider">
+                <div class="friends-sidebar-bottom">
+                    <button class="friends-settings-btn">
+                        <span>Settings</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="friends-main-content">
+            <div class="friends-main-container">
+                <!-- Header -->
+                <header class="friends-header">
+                    <div class="friends-header-content">
+                        <div class="friends-header-left">
+                            <span class="friends-header-title">Friends</span>
+                        </div>
+                        <nav class="friends-header-tabs">
+                            <ul class="friends-tabs-list">
+                                <li>
+                                    <button class="friends-tab-btn friends-tab-btn--active">
+                                        <span class="friends-tab-text">All</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="friends-tab-btn">
+                                        <span class="friends-tab-text">Online</span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="friends-tab-btn">
+                                        <span class="friends-tab-text">Pending</span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="friends-header-sort">
+                            <span>Sort by</span>
+                            <select>
+                                <option>Name</option>
+                                <option>Status</option>
+                            </select>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Search Bar -->
+                <section class="friends-search-section">
+                    <form class="friends-search-form">
+                        <input type="text" class="friends-search-input" placeholder="Search friends...">
+                        <button type="submit" class="friends-search-btn">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Friends Count -->
+                <section class="friends-count-section">
+                    <span class="friends-count-label">Total Friends: </span>
+                    <span class="friends-count-number">12</span>
+                </section>
+
+                <!-- Friends List -->
+                <section class="friends-list-section">
+                    <div class="friends-list-container">
+                        <ul class="friends-list">
+                            <li class="friends-list-item">
+                                <div class="friends-avatar-wrapper">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="friends-avatar-img">
+                                    <span class="friends-status-dot friends-status-dot--online"></span>
+                                </div>
+                                <div class="friends-info">
+                                    <span class="friends-name">John Doe</span>
+                                    <span class="friends-status">Online</span>
+                                </div>
+                                <div class="friends-actions">
+                                    <button class="friends-message-btn">Message</button>
+                                    <button class="friends-more-btn">...</button>
+                                </div>
+                            </li>
+                            <hr class="friends-list-divider">
+                            <li class="friends-list-item">
+                                <div class="friends-avatar-wrapper">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="friends-avatar-img">
+                                    <span class="friends-status-dot friends-status-dot--offline"></span>
+                                </div>
+                                <div class="friends-info">
+                                    <span class="friends-name">Jane Smith</span>
+                                    <span class="friends-status">Offline</span>
+                                </div>
+                                <div class="friends-actions">
+                                    <button class="friends-message-btn">Message</button>
+                                    <button class="friends-more-btn">...</button>
+                                </div>
+                            </li>
+                            <hr class="friends-list-divider">
+                            <li class="friends-list-item">
+                                <div class="friends-avatar-wrapper">
+                                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Alex Johnson" class="friends-avatar-img">
+                                    <span class="friends-status-dot friends-status-dot--online"></span>
+                                </div>
+                                <div class="friends-info">
+                                    <span class="friends-name">Alex Johnson</span>
+                                    <span class="friends-status">Online</span>
+                                </div>
+                                <div class="friends-actions">
+                                    <button class="friends-message-btn">Message</button>
+                                    <button class="friends-more-btn">...</button>
+                                </div>
+                            </li>
+                            <!-- Add more friends as needed -->
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (optional, e.g. for friend suggestions or ads) -->
+        <aside class="friends-sidebar friends-sidebar-right">
+            <div class="friends-sidebar-content">
+                <div class="friends-premium-section">
+                    <div class="friends-premium-title">Upgrade to Premium</div>
+                    <div class="friends-premium-description">
+                        Get more features and connect with more experts!
+                    </div>
+                    <button class="friends-message-btn" style="margin-top:1rem;">Upgrade</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
