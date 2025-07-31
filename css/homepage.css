@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .sidebar {
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    min-width: 250px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .sidebar input[type="text"] {
+    width: 80%;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  .sidebar button {
+    background: #0d6efd;
+    border: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  
+  .sidebar-nav ul {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-nav li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #212529;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: background 0.2s;
+    font-size: 1rem;
+  }
+  
+  .sidebar-nav a:hover {
+    background-color: #f1f3f5;
+    color: #0d6efd;
+  }
+  
+  .sidebar-nav .material-icons {
+    font-size: 24px;
+    margin-right: 0.75rem;
+  }
+  
+  .sidebar-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .logo-g {
+    color: #669cff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 2.1rem;
+  }
+  
+  .logo-sphere {
+    color: #a985fc;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin-left: 0.1rem;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #dee2e6;
+    margin: 1rem 0;
+  }
+  
+  main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .header .btn {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .header .btn:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+  
+  .project-avatar {
+    background: #e1e4ea;
+    color: #8a8d91;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px !important;
+  }
+  
+  .project-row span {
+    font-size: 1rem;
+  }
+  
+  .project-row a {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .project-row a:hover {
+    text-decoration: underline;
+  }
+  
+  .right-sidebar {
+    background-color: #fff;
+    border-left: 1px solid #dee2e6;
+    min-width: 300px;
+    padding: 2rem 1rem;
+  }
+  
+  .right-sidebar h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .right-sidebar p {
+    font-size: 1rem;
+    color: #495057;
+  }
+  
+  .profile-info .material-icons {
+    font-size: 32px;
+    background: #23272a;
+    color: #fff;
+  }
+  
+  @media (max-width: 1100px) {
+    .right-sidebar {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .sidebar {
+      min-width: 60px;
+      padding: 1rem 0.3rem;
+    }
+    .sidebar-logo, .sidebar-search, .sidebar-profile {
+      display: none;
+    }
+    .sidebar-nav span:not(.material-icons) {
+      display: none;
+    }
+    main {
+      padding: 1rem 0.3rem;
+    }
+  }
