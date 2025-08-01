@@ -1,7 +1,8 @@
 window.onload = () => {
   console.log("📡 Loading projects from server...");
 
-  fetch("https://gsphere-server.onrender.com/api/projects/mine", {
+  fetch("https://gsphere-server.onrender.com/api/projects/mine", 
+  {
     method: "GET",
     credentials: "include",
   })
