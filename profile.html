@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .profile-picture {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #0d6efd;
+      background: #f8f9fa;
+    }
+    .profile-links a {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+    }
+    .profile-section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="profile-header">
+      <img src="https://via.placeholder.com/140" alt="Profile Picture" class="profile-picture" id="profilePicture">
+      <div>
+        <h1 class="mb-1" id="profileName">John Doe</h1>
+        <p class="text-muted mb-2" id="profileLocation"><i class="bi bi-geo-alt"></i> San Francisco, CA</p>
+        <div class="profile-links">
+          <a href="#" id="websiteUrl" target="_blank" title="Website"><i class="bi bi-globe"></i></a>
+          <a href="#" id="githubUrl" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="#" id="linkedinUrl" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" id="cvUrl" target="_blank" class="btn btn-outline-primary btn-sm ms-2">Download CV</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile-section">
+      <h4>Bio</h4>
+      <p id="profileBio">
+        Experienced software engineer passionate about building impactful products and scalable systems. Always eager to learn and collaborate.
+      </p>
+    </div>
+    <div class="profile-section">
+      <h4>Experience</h4>
+      <ul class="list-group" id="profileExperience">
+        <li class="list-group-item">
+          <strong>Senior Developer</strong> at TechCorp (2020 - Present)
+        </li>
+        <li class="list-group-item">
+          <strong>Software Engineer</strong> at Webify (2017 - 2020)
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Example: You can replace the below JS with dynamic data fetching if needed -->
+  <script>
+    // Example data (replace with dynamic data as needed)
+    const profileData = {
+      profile_picture_url: "https://randomuser.me/api/portraits/men/32.jpg",
+      bio: "Experienced software engineer passionate about building impactful products and scalable systems. Always eager to learn and collaborate.",
+      cv_url: "https://example.com/johndoe_cv.pdf",
+      location: "San Francisco, CA",
+      experience: [
+        { title: "Senior Developer", company: "TechCorp", years: "2020 - Present" },
+        { title: "Software Engineer", company: "Webify", years: "2017 - 2020" }
+      ],
+      website_url: "https://johndoe.com",
+      github_url: "https://github.com/johndoe",
+      linkedin_url: "https://linkedin.com/in/johndoe"
+    };
+
+    document.getElementById('profilePicture').src = profileData.profile_picture_url;
+    document.getElementById('profileBio').textContent = profileData.bio;
+    document.getElementById('cvUrl').href = profileData.cv_url;
+    document.getElementById('profileLocation').innerHTML = '<i class="bi bi-geo-alt"></i> ' + profileData.location;
+    document.getElementById('websiteUrl').href = profileData.website_url;
+    document.getElementById('githubUrl').href = profileData.github_url;
+    document.getElementById('linkedinUrl').href = profileData.linkedin_url;
+
+    // Experience
+    const expList = document.getElementById('profileExperience');
+    expList.innerHTML = '';
+    profileData.experience.forEach(exp => {
+      const li = document.createElement('li');
+      li.className = 'list-group-item';
+      li.innerHTML = `<strong>${exp.title}</strong> at ${exp.company} (${exp.years})`;
+      expList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
