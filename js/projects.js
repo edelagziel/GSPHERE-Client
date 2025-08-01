@@ -23,26 +23,40 @@ window.onload = () => {
     .then((data) => {
       console.log("✅ Projects received:", data);
 
-      // השינוי כאן! ניגשים ל-data.projects ולא ל-data ישירות
       const projects = data.projects || [];
 
-      if (projects.length === 0) {
-        document.getElementById("projects-row").innerHTML = "<p>No projects found.</p>";
-        return;
-      }
-
       const container = document.getElementById("projects-row");
+      const noProjects = document.getElementById("no-projects");
       container.innerHTML = "";
+
+      if (projects.length === 0) {
+        if (noProjects) noProjects.classList.remove("d-none");
+        return;
+      } else {
+        if (noProjects) noProjects.classList.add("d-none");
+      }
 
       projects.forEach((project) => {
         const col = document.createElement("div");
-        col.className = "col-md-4";
+        col.className = "col-sm-10 col-md-6 col-lg-4 mb-4 d-flex";
+
+        // תאריך בפורמט קריא
+        const createdAt = project.created_at
+          ? new Date(project.created_at).toLocaleDateString()
+          : "Unknown date";
+
+        // תצוגת תמונה אם קיימת
+        const imageHtml = project.image_url
+          ? `<img src="${project.image_url}" class="card-img-top" style="max-height:200px; object-fit:cover;" alt="Project Image">`
+          : "";
 
         col.innerHTML = `
-          <div class="card shadow-sm">
+          <div class="card shadow-sm project-card flex-fill">
+            ${imageHtml}
             <div class="card-body">
-              <h5 class="card-title">${project.title}</h5>
-              <p class="card-text">${project.description}</p>
+              <h5 class="card-title mb-2">${project.title}</h5>
+              <p class="card-text mb-2">${project.description || ''}</p>
+              <p class="text-muted mb-0" style="font-size:0.9em;">Created at: ${createdAt}</p>
             </div>
           </div>
         `;
