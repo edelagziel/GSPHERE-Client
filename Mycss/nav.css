@@ -1,0 +1,38 @@
+#navbar-placeholder {
+    position: relative;
+    z-index: 1100;
+    width: 100%;
+  }
+  #sidebar-placeholder {
+    z-index: 1000;
+  }
+  @media (max-width: 991px) {
+    #navbar-placeholder {
+      z-index: 1100;
+    }
+    #sidebar-placeholder {
+      z-index: 1000;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #E50914;
+  }
+  .nav-link {
+    color: #333;
+  }
+  
+  .nav-link:hover {
+    background-color: #f0f0f0;
+    color: #E50914;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-link.active {
+    background-color: #E50914;
+    color: white !important;
+  }
