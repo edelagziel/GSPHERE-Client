@@ -6,7 +6,7 @@ document.getElementById("loginForm").onsubmit = (e) => {
   
     console.log("📤 Sending login request:", data);
   
-    fetch("http://localhost:3000/api/auth/logIn", {
+    fetch("https://gsphere-server.onrender.com/api/auth/logIn", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -27,7 +27,7 @@ document.getElementById("loginForm").onsubmit = (e) => {
       .then(result => {
         console.log("✅ Login successful:", result);
         alert("Login successful!");
-        window.location.href = "main.html"; // או כל דף אחר שתרצה
+        window.location.href = "project.html"; // או כל דף אחר שתרצה
       })
       .catch(err => {
         console.error("⚠️ Login error:", err);
