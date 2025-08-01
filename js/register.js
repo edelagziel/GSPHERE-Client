@@ -36,7 +36,7 @@ document.getElementById("registerForm").onsubmit = (e) => {
   .then((result) => {
     console.log("✅ Success response from server:", result);
     alert("Registered successfully!");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   })
   .catch((err) => {
     console.error("⚠️ Registration error:", err);
