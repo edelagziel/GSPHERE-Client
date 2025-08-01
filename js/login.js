@@ -27,7 +27,7 @@ document.getElementById("loginForm").onsubmit = (e) => {
       .then(result => {
         console.log("✅ Login successful:", result);
         alert("Login successful!");
-        window.location.href = "project.html"; // או כל דף אחר שתרצה
+        window.location.href = "page/project.html";
       })
       .catch(err => {
         console.error("⚠️ Login error:", err);
