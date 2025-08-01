@@ -16,7 +16,7 @@ document.getElementById("registerForm").onsubmit = (e) => {
 
   console.log("📤 Sending data to server:", data);
 
-  fetch("http://localhost:3000/api/auth/register", {
+  fetch("https://gsphere-server.onrender.com/api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
