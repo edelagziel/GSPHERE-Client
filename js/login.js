@@ -26,9 +26,21 @@ document.getElementById("loginForm").onsubmit = (e) => {
         return res.json();
       })
       .then(result => {
-        console.log("Login successful:", result);
-        alert("Login successful!");
-        window.location.href = "page/project.html";
+            console.log("Login successful:", result);
+            localStorage.setItem("fullname", result.fullname);
+            localStorage.setItem("role", result.role);
+            alert("Login successful!");
+    
+        if (result.role == 2) 
+          {
+          // Recruiter
+          window.location.href = "../page/recruiter.html";
+        } 
+        else 
+        {
+          // Regular user
+          window.location.href = "../page/project.html";
+        }
       })
       .catch(err => {
         console.error("Login error:", err);
