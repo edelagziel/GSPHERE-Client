@@ -35,13 +35,13 @@ window.onload = () => {
         // --- תמונה
         const imgUrl = (project.image_url && project.image_url.trim() !== "")
           ? project.image_url
-          : "https://via.placeholder.com/300x200?text=No+Image";
+          : "https://dummyimage.com/300x200/cccccc/000000&text=No+Image";
         const imageHtml = `
           <img src="${imgUrl}"
             class="card-img-top"
             style="max-height:200px; object-fit:cover;"
             alt="Project Image"
-            onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=No+Image';">
+            onerror="this.onerror=null;this.src='https://dummyimage.com/300x200/cccccc/000000&text=No+Image';">
         `;
 
         col.innerHTML = `
