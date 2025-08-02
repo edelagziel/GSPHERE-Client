@@ -1,0 +1,28 @@
+
+.about-card
+ {
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 32px 0 #2e394d22;
+  background: #fff;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+.about-card h1 {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.about-card hr {
+  border-top: 2px solid #e2e3e8;
+  opacity: 1;
+}
+.about-badge {
+  background: #44b2fd22;
+  color: #1577cf;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.35em 1.2em;
+  margin-bottom: 1.2em;
+  display: inline-block;
+  letter-spacing: 1px;
+}
