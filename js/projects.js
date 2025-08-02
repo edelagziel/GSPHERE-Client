@@ -70,3 +70,12 @@ window.onload = () => {
         "<p class='text-danger'>Failed to load projects.</p>";
     });
 };
+
+// Set user name from localStorage if available
+document.addEventListener("DOMContentLoaded", function() 
+{
+  const name = localStorage.getItem("fullname");
+  if (name) {
+    document.getElementById("welcome-user").innerHTML = `<h5>Welcome, <span class="text-primary">${name}</span>!</h5>`;
+  }
+});

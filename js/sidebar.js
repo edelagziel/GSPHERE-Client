@@ -1,9 +1,14 @@
 // sidebar.js
-window.addEventListener("DOMContentLoaded", function() 
+window.addEventListener("DOMContentLoaded", function () 
 {
-    fetch("../Compponenet/sidebar.html")
-      .then(res => res.text())
-      .then(html => {
+    const role = localStorage.getItem("role");
+    const sidebarPath =
+      role == 2
+        ? "../Compponenet/recruiter.sidebar.html"
+        : "../Compponenet/sidebar.html";
+    fetch(sidebarPath)
+      .then((res) => res.text())
+      .then((html) => {
         document.getElementById("sidebar-placeholder").innerHTML = html;
       });
   });
