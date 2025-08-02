@@ -1,5 +1,3 @@
-// recruiter.js
-
 const STATUS_MAP = {
     1: "Open",
     2: "Interviewing",
@@ -13,20 +11,7 @@ const STATUS_MAP = {
     5: "Other"
   };
   
-  let skillsMap = {}; // id -> name
-  
-  // טוען את רשימת כל הסקילס ושומר במילון
-  async function fetchSkills() {
-    const res = await fetch("https://gsphere-server.onrender.com/api/jobs/skills", { credentials: "include" });
-    const data = await res.json();
-    (data.skills || []).forEach(skill => {
-      skillsMap[skill.id] = skill.name;
-    });
-  }
-  
   window.onload = async () => {
-    await fetchSkills();
-  
     // הצגת שם המגייס
     const name = localStorage.getItem("fullname");
     if (name) {
@@ -52,8 +37,8 @@ const STATUS_MAP = {
   
       jobs.forEach(job => {
         // הצגת שמות הסקילס של המשרה
-        const skillNames = (job.skills && job.skills.length)
-          ? job.skills.map(id => skillsMap[id] || `Skill#${id}`).join(", ")
+        const skillNames = Array.isArray(job.skills) && job.skills.length
+          ? job.skills.map(skill => skill.name).join(", ")
           : "—";
   
         const createdAt = job.created_at ? new Date(job.created_at).toLocaleDateString() : "Unknown";
