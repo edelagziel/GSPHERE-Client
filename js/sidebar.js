@@ -8,3 +8,20 @@ window.addEventListener("DOMContentLoaded", function()
       });
   });
   
+
+
+  document.getElementById("logoutBtn").addEventListener("click", function() 
+  {
+    fetch("https://gsphere-server.onrender.com/api/auth/logout", 
+    {
+      method: "POST",
+      credentials: "include"
+    })
+    .then(res => {
+      window.location.href = "../index.html";
+    })
+    .catch(err => {
+      window.location.href = "../index.html";
+    });
+  });
+  
