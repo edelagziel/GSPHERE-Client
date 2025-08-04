@@ -1,0 +1,10 @@
+.card-hover-scale {
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1);
+    cursor: pointer;
+  }
+  .card-hover-scale:hover, .card-hover-scale:focus-within {
+    transform: scale(1.035);
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.10), 0 1.5px 4px rgba(0,0,0,0.13);
+  }
+  
