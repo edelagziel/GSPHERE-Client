@@ -1,8 +1,5 @@
-// cards/project.card.js
-
 export function createProjectCard(project, stageText, visibilityText, createdAt, imageHtml) 
 {
-    // מזהה ייחודי לכל קלף (נניח id של הפרויקט)
     const cardId = `project-card-${project.id}`;
     const shortDesc = project.description?.slice(0, 60) || '';
     const isLong = (project.description?.length || 0) > 60;
@@ -24,9 +21,12 @@ export function createProjectCard(project, stageText, visibilityText, createdAt,
             <li><strong>Stage:</strong> ${stageText}</li>
             <li><strong>Visibility:</strong> ${visibilityText}</li>
           </ul>
-          <div class="d-flex gap-2 mt-2">
+          <div class="d-flex gap-2 mt-2 align-items-center">
             <button class="btn btn-outline-primary btn-sm enter-btn" data-id="${project.id}">Enter Project</button>
             <button class="btn btn-outline-danger btn-sm leave-btn" data-id="${project.id}">Leave Project</button>
+            <button class="btn btn-outline-warning btn-sm update-btn d-flex align-items-center" data-id="${project.id}" title="Update Project">
+              <i class="bi bi-pencil-square me-1"></i> Update
+            </button>
           </div>
           <p class="text-muted mb-0 mt-2" style="font-size:0.9em;">Created at: ${createdAt}</p>
         </div>

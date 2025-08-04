@@ -3,7 +3,7 @@ import { createProjectCard } from '../../cards/project.card.js';
 import { setupEnterProjectButton  } from '../../buttons/enterProject.js';
 import { setupLeaveProjectButton } from '../../buttons/leaveProject.js';
 import { setupShowMoreButton  } from '../../buttons/showMore.js';
-
+import{setupUpdateProjectButton}from '../../buttons/update-btn.js'
 
 
 window.onload = () => 
@@ -71,9 +71,8 @@ window.onload = () =>
             col.innerHTML = createProjectCard(project, stageText, visibilityText, createdAt, imageHtml);  
             container.appendChild(col);
 
-            setupShowMoreButton();
-            setupEnterProjectButton();
-            setupLeaveProjectButton();
+            document.addEventListener("click", setupAllProjectButtons );
+
           });
         })
       .catch((err) => 
@@ -83,4 +82,15 @@ window.onload = () =>
       });
 };
 
+
+
+
+
+function setupAllProjectButtons()
+{
+  setupShowMoreButton();
+  setupEnterProjectButton();
+  setupLeaveProjectButton();
+  setupUpdateProjectButton();
+}
 
