@@ -13,14 +13,18 @@ document.getElementById("createProjectForm").onsubmit = async function (e)
   
     const result = await res.json();
     const msgDiv = document.getElementById("create-result");
-    if (res.ok) {
+    if (res.ok) 
+    {
       msgDiv.innerHTML = `<div class="alert alert-success">Project created!</div>`;
-      setTimeout(() => {
+      setTimeout(() => 
+      {
         window.location.href = "project.html";
       }, 1200);
-    } else {
+    } 
+    else 
+    {
       msgDiv.innerHTML = `<div class="alert alert-danger">Error: ${result.error || "Failed to create project"}</div>`;
-      window.location.href = "project.html";
+      // window.location.href = "project.html";
     }
   };
   
