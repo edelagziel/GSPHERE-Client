@@ -1,7 +1,7 @@
 import { stages, visibilities } from '../../data/projectEnums.js';
 import { createProjectCard } from '../../cards/project.card.js'; 
 import { setupShowMoreButton } from '../../buttons/enterProject.js';
-import { setupEnterProjectButton } from '../../buttons/leaveProject.js';
+import { setupLeaveProjectButton } from '../../buttons/leaveProject.js';
 import { setupLeaveProjectButton } from '../../buttons/showMore.js';
 
 
