@@ -1,6 +1,5 @@
 
 // Add card-hover-scale class for card style
-import '../../Mycss/card-hover-scale.css';
 
 
 
