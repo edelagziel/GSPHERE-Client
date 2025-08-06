@@ -70,7 +70,7 @@ window.onload = () =>
             col.innerHTML = createProjectCard(project, stageText, visibilityText, createdAt, imageHtml);  
             container.appendChild(col);
 
-            document.addEventListener("click", setupAllProjectButtons );
+            setupAllProjectButtons();
 
           });
         })
