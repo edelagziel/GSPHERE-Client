@@ -8,7 +8,6 @@ import{setupUpdateProjectButton}from '../../buttons/update-btn.js'
 
 window.onload = () => 
   {
-
     const name = localStorage.getItem("fullname");
     if (name)
       {
@@ -59,13 +58,13 @@ window.onload = () =>
             // --- תמונה
             const imgUrl = (project.image_url && project.image_url.trim() !== "")
               ? project.image_url
-              : "https://dummyimage.com/300x200/cccccc/000000&text=No+Image";
+              : "https://unsplash.com/photos/black-and-blue-laptop-computer-bGWVhFY1gH0";
             const imageHtml = `
               <img src="${imgUrl}"
                 class="card-img-top"
                 style="max-height:200px; object-fit:cover;"
                 alt="Project Image"
-                onerror="this.onerror=null;this.src='https://dummyimage.com/300x200/cccccc/000000&text=No+Image';">
+                onerror="this.onerror=null;this.src='https://unsplash.com/photos/black-and-blue-laptop-computer-bGWVhFY1gH0';">
             `;
 
             col.innerHTML = createProjectCard(project, stageText, visibilityText, createdAt, imageHtml);  

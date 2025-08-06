@@ -2,6 +2,7 @@ export function setupUpdateProjectButton()
 {
   document.addEventListener("click", function(e)
    {
+    e.preventDefault();
     const btn = e.target.closest(".update-btn");
     console.log(btn);
     if (btn)

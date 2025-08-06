@@ -1,4 +1,5 @@
-export function setupShowMoreButton() {
+export function setupShowMoreButton() 
+{
     document.addEventListener("click", function(e) {
       if (e.target.classList.contains("show-more")) {
         e.preventDefault();
