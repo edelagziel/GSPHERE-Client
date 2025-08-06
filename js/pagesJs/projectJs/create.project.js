@@ -24,7 +24,6 @@ document.getElementById("createProjectForm").onsubmit = async function (e)
     else 
     {
       msgDiv.innerHTML = `<div class="alert alert-danger">Error: ${result.error || "Failed to create project"}</div>`;
-      // window.location.href = "project.html";
     }
   };
   
