@@ -1,8 +1,6 @@
 export function setupUpdateProjectButton() 
 {
- 
-    e.preventDefault();
-    const btn = e.target.closest(".update-btn");
+     const btn = e.target.closest(".update-btn");
     console.log(btn);
     if (btn)
      {
