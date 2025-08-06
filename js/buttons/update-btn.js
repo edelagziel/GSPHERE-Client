@@ -1,7 +1,6 @@
 export function setupUpdateProjectButton() 
 {
-  document.addEventListener("click", function(e)
-   {
+ 
     e.preventDefault();
     const btn = e.target.closest(".update-btn");
     console.log(btn);
@@ -10,7 +9,6 @@ export function setupUpdateProjectButton()
       const projectId = btn.getAttribute("data-id");
       window.location.href = `update.project.html?projectId=${projectId}`;
     }
-  });
 }
 
 
