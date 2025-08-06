@@ -1,10 +1,11 @@
-function getProjectIdFromUrl() {
+function getProjectIdFromUrl() 
+{
     const params = new URLSearchParams(window.location.search);
     return params.get("projectId");
-  }
+}
   
-  document.getElementById("updateProjectForm").onsubmit = async function (e) {
-    e.preventDefault();
+  document.getElementById("updateProjectForm").onsubmit = async function (e)
+   {
     const projectId = getProjectIdFromUrl();
     if (!projectId) {
       alert("Project ID is missing!");

@@ -3,7 +3,7 @@ export function setupUpdateProjectButton()
   document.addEventListener("click", function(e)
    {
     const btn = e.target.closest(".update-btn");
-    console.log(btn);
+    alert("btn update");
     if (btn)
      {
       const projectId = btn.getAttribute("data-id");
