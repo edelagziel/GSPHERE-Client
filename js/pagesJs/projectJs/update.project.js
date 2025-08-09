@@ -1,39 +1,59 @@
-function getProjectIdFromUrl() 
-{
-    const params = new URLSearchParams(window.location.search);
-    return params.get("projectId");
+function getProjectIdFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id");
 }
-  
-  document.getElementById("updateProjectForm").onsubmit = async function (e)
-   {
-    const projectId = getProjectIdFromUrl();
-    if (!projectId) {
-      alert("Project ID is missing!");
-      return;
-    }
-    
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-  
-    // כתובת השרת צריכה לכלול את ה־id
-    const res = await fetch(`${CONFIG.API_BASE_URL}/projects/${projectId}`, {
 
-    // const res = await fetch(`https://gsphere-server.onrender.com/api/projects/${projectId}`, {
-      method: "PUT", // או PATCH (בדוק מה השרת שלך תומך)
+document.getElementById("updateProjectForm").onsubmit = async function (e) {
+  e.preventDefault();
+
+  const projectId = getProjectIdFromUrl();
+  if (!projectId) {
+    alert("Project ID is missing!");
+    return;
+  }
+
+  const formData = new FormData(e.target);
+  // המרה לאובייקט פשוט
+  const data = Object.fromEntries(formData.entries());
+  console.log(data);
+
+  // דוגמאות להמרות טיפוסים אם ה‑API מצפה למספרים/אינומים
+  if ("stage" in data) data.stage = Number(data.stage);      // או להשאיר מחרוזת אם ככה ה‑API בנוי
+  if ("visibility" in data) data.visibility = String(data.visibility);
+
+  const msgDiv = document.getElementById("update-result");
+  msgDiv.innerHTML = `<div class="alert alert-info">Updating…</div>`;
+
+  try {
+    const res = await fetch(`${CONFIG.API_BASE_URL}/projects/${projectId}`, {
+      method: "PUT",
       credentials: "include",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
-  
-    const result = await res.json();
-    const msgDiv = document.getElementById("update-result");
+
+    // נסה לקרוא JSON, ואם לא — טקסט
+    let result, raw;
+    const ct = res.headers.get("content-type") || "";
+    if (ct.includes("application/json")) {
+      result = await res.json();
+    } else {
+      raw = await res.text();
+    }
+
     if (res.ok) {
       msgDiv.innerHTML = `<div class="alert alert-success">Project updated!</div>`;
-      setTimeout(() => {
-        window.location.href = "project.html";
-      }, 1200);
+      setTimeout(() => (window.location.href = "project.html"), 1200);
     } else {
-      msgDiv.innerHTML = `<div class="alert alert-danger">Error: ${result.error || "Failed to update project"}</div>`;
+      // הצג מידע מקסימלי לדיבאג
+      const serverMsg = result?.error || result?.message || raw || "Unknown server error";
+      msgDiv.innerHTML = `<div class="alert alert-danger">
+        Error ${res.status}: ${res.statusText}<br>${serverMsg}
+      </div>`;
+      console.error("Update failed:", { status: res.status, statusText: res.statusText, result, raw, sent: data });
     }
-  };
-  
+  } catch (err) {
+    console.error(err);
+    msgDiv.innerHTML = `<div class="alert alert-danger">Network/parse error: ${err.message}</div>`;
+  }
+};

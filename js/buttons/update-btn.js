@@ -3,11 +3,10 @@ export function setupUpdateProjectButton()
   document.addEventListener("click", function(e)
    {
     const btn = e.target.closest(".update-btn");
-    alert("btn update");
     if (btn)
      {
       const projectId = btn.getAttribute("data-id");
-      window.location.href = `update.project.html?projectId=${projectId}`;
+      window.location.href = `update.project.html?id=${projectId}`;
     }
   });
 }
