@@ -16,7 +16,9 @@ function getProjectIdFromUrl()
     const data = Object.fromEntries(formData.entries());
   
     // כתובת השרת צריכה לכלול את ה־id
-    const res = await fetch(`https://gsphere-server.onrender.com/api/projects/${projectId}`, {
+    const res = await fetch(`${CONFIG.API_BASE_URL}/projects/${projectId}`, {
+
+    // const res = await fetch(`https://gsphere-server.onrender.com/api/projects/${projectId}`, {
       method: "PUT", // או PATCH (בדוק מה השרת שלך תומך)
       credentials: "include",
       headers: { "Content-Type": "application/json" },

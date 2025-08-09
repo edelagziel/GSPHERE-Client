@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
         const logoutBtn = document.getElementById("logoutBtn");
         if (logoutBtn) {
           logoutBtn.addEventListener("click", function () {
-            fetch("https://gsphere-server.onrender.com/api/auth/logout", {
+            fetch(`${CONFIG.API_BASE_URL}/auth/logout`, {
               method: "POST",
               credentials: "include"
             })

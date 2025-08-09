@@ -14,9 +14,10 @@ document.getElementById("registerForm").onsubmit = (e) => {
 
   delete data.confirmPassword; // לא שולחים לשרת
 
-  console.log("📤 Sending data to server:", data);
+  console.log("Sending data to server:", data);
 
-  fetch("https://gsphere-server.onrender.com/api/auth/register", {
+  fetch(`${CONFIG.API_BASE_URL}/auth/register`, 
+    {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -24,22 +25,22 @@ document.getElementById("registerForm").onsubmit = (e) => {
     body: JSON.stringify(data)
   })
   .then((res) => {
-    console.log("📥 Raw response:", res);
+    console.log(" Raw response:", res);
     if (!res.ok) {
       return res.json().then(err => {
-        console.error("❌ Server error response:", err);
+        console.error("Server error response:", err);
         throw new Error(err.message || "Registration failed");
       });
     }
     return res.json();
   })
   .then((result) => {
-    console.log("✅ Success response from server:", result);
+    console.log("Success response from server:", result);
     alert("Registered successfully!");
     window.location.href = "../index.html";
   })
   .catch((err) => {
-    console.error("⚠️ Registration error:", err);
+    console.error("Registration error:", err);
     alert("Registration error: " + err.message);
   });
 };

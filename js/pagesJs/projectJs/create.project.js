@@ -4,7 +4,7 @@ document.getElementById("createProjectForm").onsubmit = async function (e)
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
   
-    const res = await fetch("https://gsphere-server.onrender.com/api/projects", {
+    const res = await fetch(`${CONFIG.API_BASE_URL}/projects`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

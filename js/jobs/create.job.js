@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
     // טען את כל הסקילס מהשרת (עדיף absolute URL בפרודקשן)
     try {
-      const res = await fetch("https://gsphere-server.onrender.com/api/jobs/skills", {
+      const res = await fetch(`${CONFIG.API_BASE_URL}/jobs/skills`, {
         credentials: "include"
       });
       const data = await res.json();
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       // שלח לשרת
       try {
-        const res = await fetch("https://gsphere-server.onrender.com/api/jobs", {
+        const res = await fetch(`${CONFIG.API_BASE_URL}/jobs`, {
           method: "POST",
           credentials: "include",
           headers: { "Content-Type": "application/json" },

@@ -17,8 +17,7 @@ window.onload = () =>
     }
 
 
-
-  fetch("https://gsphere-server.onrender.com/api/projects/mine", 
+    fetch(`${CONFIG.API_BASE_URL}/projects/mine`, 
     {
       method: "GET",
       credentials: "include",

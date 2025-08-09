@@ -6,7 +6,8 @@ document.getElementById("loginForm").onsubmit = (e) => {
   
     console.log("Sending login request:", data);
   
-    fetch("https://gsphere-server.onrender.com/api/auth/logIn", 
+    
+    fetch(`${CONFIG.API_BASE_URL}/auth/logIn`,
       {
       method: "POST",
       headers: {

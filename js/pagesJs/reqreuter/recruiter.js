@@ -24,7 +24,7 @@ const STATUS_MAP = {
     container.innerHTML = `<div class="text-center text-muted py-3">Loading jobs...</div>`;
   
     try {
-      const res = await fetch("https://gsphere-server.onrender.com/api/jobs/my", { credentials: "include" });
+      const res = await fetch(`${CONFIG.API_BASE_URL}/jobs/my`, { credentials: "include" });
       const data = await res.json();
       const jobs = data.job || [];
   
