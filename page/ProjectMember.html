@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Members</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Mycss/basic.css" rel="stylesheet">
+  <link href="../Mycss/nav.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <!-- Sidebar -->
+  <div id="sidebar-placeholder"></div>
+
+  <div class="main-content">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+          <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white text-center">
+              <h1 class="display-6 mb-0">Project Members</h1>
+            </div>
+            <div class="card-body px-4 py-4">
+              <div id="members-list" class="mb-4">
+                <!-- Example static members, replace with dynamic content as needed -->
+                <ul class="list-group">
+                  <li class="list-group-item d-flex align-items-center">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Eden" class="rounded-circle me-3" style="width:40px; height:40px;">
+                    <div>
+                      <strong>Eden</strong> <span class="badge bg-success ms-2">Online</span>
+                      <div class="text-muted small">Full-stack Developer</div>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dana" class="rounded-circle me-3" style="width:40px; height:40px;">
+                    <div>
+                      <strong>Dana</strong> <span class="badge bg-secondary ms-2">Offline</span>
+                      <div class="text-muted small">Game Designer</div>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex align-items-center">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Alex" class="rounded-circle me-3" style="width:40px; height:40px;">
+                    <div>
+                      <strong>Alex</strong> <span class="badge bg-success ms-2">Online</span>
+                      <div class="text-muted small">Backend Engineer</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <hr>
+              <div>
+                <h5 class="mb-3">Project Chat Room</h5>
+                <div class="border rounded p-3 mb-2" style="height:200px; overflow-y:auto; background:#f8f9fa;" id="chat-messages">
+                  <!-- Example static chat messages -->
+                  <div class="mb-2">
+                    <span class="fw-bold text-primary">Eden:</span>
+                    <span>Hey team! Let's sync up on the new features.</span>
+                    <div class="text-muted small">10:01 AM</div>
+                  </div>
+                  <div class="mb-2">
+                    <span class="fw-bold text-success">Alex:</span>
+                    <span>Backend API is ready for testing!</span>
+                    <div class="text-muted small">10:03 AM</div>
+                  </div>
+                  <div class="mb-2">
+                    <span class="fw-bold text-secondary">Dana:</span>
+                    <span>I'll update the UI mockups today.</span>
+                    <div class="text-muted small">10:05 AM</div>
+                  </div>
+                </div>
+                <form id="chat-form" class="d-flex mt-2">
+                  <input type="text" class="form-control me-2" id="chat-input" placeholder="Type a message..." autocomplete="off">
+                  <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="project.html" class="btn btn-outline-secondary">Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/config/config.js"></script>
+  <script src="../js/nav/sidear/navbar.js"></script>
+  <script src="../js/nav/sidear/sidebar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Basic chat functionality (local only, for demo)
+    document.getElementById('chat-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('chat-input');
+      const msg = input.value.trim();
+      if (msg) {
+        const chatMessages = document.getElementById('chat-messages');
+        const now = new Date();
+        const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
+        const div = document.createElement('div');
+        div.className = 'mb-2';
+        div.innerHTML = '<span class="fw-bold text-primary">You:</span> ' +
+                        '<span>' + msg + '</span>' +
+                        '<div class="text-muted small">' + time + '</div>';
+        chatMessages.appendChild(div);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
