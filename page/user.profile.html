@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Mycss/basic.css" rel="stylesheet">
+  <link href="../Mycss/nav.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <div id="navbar-placeholder"></div>
+  <!-- Sidebar -->
+  <div id="sidebar-placeholder"></div>
+
+  <div class="main-content">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+          <div class="card shadow-sm">
+            <div class="card-header text-center bg-primary text-white">
+              <h1 class="display-6 mb-0">User Profile</h1>
+            </div>
+            <div class="card-body px-4 py-4">
+              <form>
+                <div class="text-center mb-4">
+                  <div class="d-flex flex-column align-items-center gap-2">
+                    <img id="profile-picture" src="https://plus.unsplash.com/premium_photo-1677094310956-7f88ae5f5c6b?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile Picture" class="rounded-circle border border-3 border-primary" style="width:120px; height:120px; object-fit:cover;">
+                    <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="open-camera-btn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16">
+                        <path d="M9.5 2a.5.5 0 0 1 .5.5V3h1.5A1.5 1.5 0 0 1 13 4.5V5h.5A1.5 1.5 0 0 1 15 6.5v6A1.5 1.5 0 0 1 13.5 14h-11A1.5 1.5 0 0 1 1 12.5v-6A1.5 1.5 0 0 1 2.5 5H3v-.5A1.5 1.5 0 0 1 4.5 3H6v-.5a.5.5 0 0 1 .5-.5h3ZM6 3v-.5a1.5 1.5 0 0 1 3 0V3h-3Zm-2 .5V5h8v-.5a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5ZM2.5 6A.5.5 0 0 0 2 6.5v6a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5v-6a.5.5 0 0 0-.5-.5h-11ZM8 7a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 1a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                      </svg>
+                      Take Picture
+                    </button>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Bio</label>
+                  <textarea class="form-control" rows="2" placeholder="Tell us about yourself...">Full-stack developer with passion for gaming and open-source.</textarea>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">CV URL</label>
+                  <input type="url" class="form-control" value="https://example.com/cv/eden.pdf" placeholder="Link to your CV">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Location</label>
+                  <input type="text" class="form-control" value="Tel Aviv" placeholder="Your location">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Experience</label>
+                  <input type="text" class="form-control" value="3 years of backend development with Node.js and PostgreSQL." placeholder="Your experience">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">Website</label>
+                  <input type="url" class="form-control" value="https://edenportfolio.dev" placeholder="Your website">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">GitHub</label>
+                  <input type="url" class="form-control" value="https://github.com/eden" placeholder="GitHub profile">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label fw-semibold">LinkedIn</label>
+                  <input type="url" class="form-control" value="https://linkedin.com/in/eden-dev" placeholder="LinkedIn profile">
+                </div>
+                <div class="text-center mt-4">
+                  <button type="submit" class="btn btn-success px-5">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/config/config.js"></script>
+  <script src="../js/nav/sidear/navbar.js"></script>
+  <script src="../js/nav/sidear/sidebar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
