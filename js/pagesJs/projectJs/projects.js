@@ -17,7 +17,7 @@ window.onload = () =>
     }
 
 
-    fetch(`${CONFIG.API_BASE_URL}/projects/mine`, 
+    fetch(`${CONFIG.API_BASE_URL}/projects/mine`,
     {
       method: "GET",
       credentials: "include",
