@@ -10,7 +10,8 @@ document.getElementById("loginForm").onsubmit = (e) => {
     fetch(`${CONFIG.API_BASE_URL}/auth/logIn`,
       {
       method: "POST",
-      headers: {
+      headers: 
+      {
         "Content-Type": "application/json"
       },
       credentials: "include", 

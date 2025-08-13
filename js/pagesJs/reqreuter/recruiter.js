@@ -14,7 +14,8 @@ const STATUS_MAP = {
   window.onload = async () => {
     // הצגת שם המגייס
     const name = localStorage.getItem("fullname");
-    if (name) {
+    if (name) 
+    {
       const nameSpan = document.getElementById("recruiter-name");
       if (nameSpan) nameSpan.textContent = name;
     }
