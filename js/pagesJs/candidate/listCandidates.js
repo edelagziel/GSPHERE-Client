@@ -52,17 +52,4 @@ function showError(message) {
   list.innerHTML = `<div class="alert alert-danger text-center w-100 mb-0">${message}</div>`;
   count.hidden = true;
 }
-// Commit message suggestion for the last 3 hours of work:
 
-feat: implement candidate listing page, job info display, and API integration
-
-- Added all.Candidates.html page to display all candidates for a job
-- Implemented candidate card component and rendering logic
-- Integrated API calls for fetching candidates per job
-- Added job info display and dynamic page title updates
-- Improved config for API base URL (local/production)
-- Enhanced UI with Bootstrap and custom styles
-- Added error handling and empty state messages for candidate list
-- Modularized JS for maintainability (cards, config, page logic)
-
-This commit covers the main candidate listing workflow and related infrastructure.
