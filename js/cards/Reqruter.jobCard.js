@@ -1,5 +1,6 @@
 // ../../components/jobCard.js
-export function createJobCard(job, { skillsMap, STATUS_MAP, LOCATION_MAP }) {
+export function createJobCard(job, { skillsMap, STATUS_MAP, LOCATION_MAP }) 
+{
     let skillNames = "—";
     if (Array.isArray(job.skill_ids)) {
       const names = job.skill_ids.map(id => skillsMap.get(Number(id))).filter(Boolean);
@@ -26,7 +27,16 @@ export function createJobCard(job, { skillsMap, STATUS_MAP, LOCATION_MAP }) {
           <li><strong>Skills:</strong> ${skillNames}</li>
           <li><strong>Deadline:</strong> ${deadline}</li>
         </ul>
-        <p class="text-muted mb-0 small">Created at: ${createdAt}</p>
+        <p class="text-muted mb-2 small">Created at: ${createdAt}</p>
+    
+        <div class="mt-3">
+       <button 
+            class="btn btn-sm btn-outline-secondary see-candidates-btn" 
+            data-id="${job.id}"
+            data-title="${job.title}">
+            See All Candidates
+       </button>
+        </div>
       </div>
     `;
   

@@ -1,6 +1,8 @@
 // recruiter.page.js (load as module)
 import { getSkills } from "../../data/skillsService.js";
 import { createJobCard } from "../../cards/Reqruter.jobCard.js";
+import "../../buttons/Page.seeCandidatesButton.js";
+
 
 // Status mapping for job postings
 const STATUS_MAP = {
