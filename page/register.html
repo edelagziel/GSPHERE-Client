@@ -11,6 +11,8 @@
 
   <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
     <h1 class="text-center mb-4">Register</h1>
+    <!-- קונטיינר להודעות -->
+    <div id="msg-container"></div>
 
     <form id="registerForm">
       <div class="mb-3">
@@ -46,7 +48,8 @@
         </select>
       </div>
 
-      <button type="submit" class="btn btn-primary w-100">Register</button>
+      <!-- כפתור עם מזהה -->
+      <button id="registerBtn" type="submit" class="btn btn-primary w-100">Register</button>
     </form>
 
     <p class="text-center mt-3">
@@ -54,8 +57,11 @@
       <a href="../index.html">Login</a>
     </p>
   </div>
+
   <script src="../js/config/config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/pagesJs/logIn/register.js"></script>
+  <script src=".././js/utils/utils.js"></script>
+
 </body>
 </html>

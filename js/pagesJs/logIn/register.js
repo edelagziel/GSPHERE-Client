@@ -1,46 +1,50 @@
-// /js/register.js
-
 document.getElementById("registerForm").onsubmit = (e) => {
   e.preventDefault();
+
+  const registerBtn = document.getElementById("registerBtn");
+  setButtonLoading(registerBtn, true, "Registering...");
 
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
 
   // בדיקה: האם הסיסמאות תואמות
   if (data.password !== data.confirmPassword) {
-    alert("Passwords do not match");
+    showMessage('danger', 'Passwords do not match', 4000);
+    setButtonLoading(registerBtn, false);
     return;
   }
 
   delete data.confirmPassword; // לא שולחים לשרת
 
-  console.log("Sending data to server:", data);
+  showMessage('info', 'Registering...');
 
   fetch(`${CONFIG.API_BASE_URL}/auth/register`, 
     {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    }
+  )
   .then((res) => {
-    console.log(" Raw response:", res);
     if (!res.ok) {
       return res.json().then(err => {
-        console.error("Server error response:", err);
         throw new Error(err.message || "Registration failed");
       });
     }
     return res.json();
   })
   .then((result) => {
-    console.log("Success response from server:", result);
-    alert("Registered successfully!");
-    window.location.href = "../index.html";
+    showMessage('success', 'Registered successfully! Redirecting to login...');
+    setTimeout(() => {
+      window.location.href = "../index.html";
+    }, 1500);
   })
   .catch((err) => {
-    console.error("Registration error:", err);
-    alert("Registration error: " + err.message);
+    showMessage('danger', "Registration error: " + err.message, 4000);
+  })
+  .finally(() => {
+    setButtonLoading(registerBtn, false);
   });
 };
