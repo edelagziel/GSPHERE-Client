@@ -33,3 +33,42 @@
   <script src="./js/pagesJs/logIn/login.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!-- 
+  System Overview:
+
+  1. Recruiters can view all candidates for a relevant position (see page/all.Candidates.html).
+  2. Each candidate's card shows their profile picture (from third-party or uploaded by user), bio, location, and links to their resume (CV) and LinkedIn if available.
+  3. Users (candidates) can upload their profile picture and resume (CV) via their profile page.
+  4. Uploaded files are handled by the backend via the uploadFile utility (see js/pagesJs/profile/uploadFile.js).
+  5. Candidate data, including links to uploaded files, is fetched and rendered for recruiters.
+
+  Main Flow:
+    - Candidate uploads profile picture and CV on their profile page.
+    - Data is saved and associated with their user profile.
+    - Recruiter visits the "All Candidates" page for a position.
+    - The system fetches and displays all candidates for that position, including their profile picture and CV link.
+
+  Key Files:
+    - js/pagesJs/profile/uploadFile.js: Handles file uploads.
+    - js/pagesJs/profile/profileLoad.js: Loads and displays user profile, including uploaded files.
+    - js/cards/candidateCard.js: Renders candidate cards with profile picture, bio, CV, and LinkedIn.
+    - js/pagesJs/candidate/listCandidates.js: Fetches and renders all candidates for a job.
+    - page/all.Candidates.html: UI for recruiters to view all candidates for a position.
+
+  Security:
+    - Only recruiters can access the "All Candidates" page.
+    - File uploads are validated and stored securely on the server.
+
+  User Experience:
+    - Candidates see their uploaded profile picture and CV on their profile.
+    - Recruiters see all relevant candidate info, including third-party profile pictures and resumes, in one place.
+-->
+
