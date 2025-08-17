@@ -1,4 +1,5 @@
 import { ShowAllProjectCard } from "../../cards/findProject.card.js"
+import "../../buttons/Join.Member.js"
 
 document.addEventListener("DOMContentLoaded", function()
  {

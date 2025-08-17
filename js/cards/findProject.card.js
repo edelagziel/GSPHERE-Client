@@ -30,7 +30,7 @@ export function ShowAllProjectCard(project)
           <div class="card-footer d-flex justify-content-between align-items-center">
             <small class="text-muted">Created: ${created}</small>
             <div class="d-flex gap-2">
-              <button class="btn btn-outline-primary btn-sm join-btn" data-id="${projectid}">Join Request</button>
+              <button class="btn btn-outline-primary btn-sm join-btn" data-id="${projectid}">Join</button>
               <button class="btn btn-outline-info btn-sm more-info-btn" data-id="${projectid}">More Info</button>
             </div>
           </div>
