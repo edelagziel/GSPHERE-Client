@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Listen for any Join button click on the page (including dynamically rendered buttons)
+// buttons/joinProjectButton.js
+
+export function setupJoinProjectButton() {
     document.body.addEventListener("click", async (e) => {
       const btn = e.target.closest(".join-btn");
       if (!btn) return;
@@ -7,17 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const projectId = btn.getAttribute("data-id");
       if (!projectId) return;
   
-      // Get user_id from localStorage (update according to your implementation)
-      const userId = localStorage.getItem("user_id");
-      const role = 2; // Example: regular member (update as needed)
-
-  
+      // לא צריך userId ולא צריך role מהקליינט - השרת מזהה לפי הטוקן
       try {
         const res = await fetch(`${CONFIG.API_BASE_URL}/projects/${projectId}/members`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          credentials: "include", // Include cookies if needed
-          body: JSON.stringify({ user_id: userId, role }),
+          credentials: "include", // חשוב שישלח את ה־cookie עם ה־JWT
+          body: JSON.stringify({}), // אפשר אפילו לשלוח אובייקט ריק!
         });
   
         if (!res.ok) {
@@ -25,12 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error(errMsg);
         }
   
-        alert("Join request sent successfully!");
-        // You can update the button/refresh the page/show a visual indicator
+        alert("You have joined the project!");
         btn.disabled = true;
         btn.textContent = "Joined";
       } catch (err) {
         alert("Failed to join the project: " + err.message);
       }
     });
-  });
+  }
+  
