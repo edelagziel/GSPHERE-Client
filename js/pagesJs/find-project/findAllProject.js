@@ -1,5 +1,7 @@
 import { ShowAllProjectCard } from "../../cards/findProject.card.js";
 import { setupJoinProjectButton } from "../../buttons/Join.Member.js";
+import { setupEnterProjectButton } from "../../buttons/more-info-btn.js";
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // טען פרויקטים
@@ -47,4 +49,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // קריאה לפונקציה שמאזינה לכפתורי "Join"
   setupJoinProjectButton();
+  setupEnterProjectButton();
 });

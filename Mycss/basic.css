@@ -51,4 +51,13 @@ body {
   main {
     margin-left: 220px;
   }
-    
+  
+  .project-image-fixed {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;           /* אפשר גם 300px/320px/וכו' */
+    object-fit: cover;       /* מרכז וגוזר – לא משטח */
+    border-radius: 16px;     /* עיגול פינות, אופציונלי */
+    background: #f5f5f5;     /* רקע אחיד מאחור, אם יש תמונות קטנות/שקופות */
+    display: block;
+  }
