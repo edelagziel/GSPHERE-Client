@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Update Job</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../Mycss/basic.css" rel="stylesheet">
+  <link href="../Mycss/nav.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div id="navbar-placeholder"></div>
+  <div id="sidebar-placeholder"></div>
+  
+  <div class="main-content">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+          <h1 class="display-5 fw-bold mb-4 text-center">Update Job</h1>
+          <form id="updateJobForm" class="card p-4 shadow-sm">
+            
+            <div class="mb-3">
+              <label class="form-label">Job Title</label>
+              <input type="text" class="form-control" name="title" required />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Description</label>
+              <textarea class="form-control" name="description" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Deadline</label>
+              <input type="date" class="form-control" name="deadline" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Update Job</button>
+          </form>
+          <div id="job-result" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/config/config.js"></script>
+  <script src="../js/nav/sidear/navbar.js"></script>
+  <script src="../js/nav/sidear/sidebar.js"></script>
+  <script type="module" src="../js/jobs/update.job.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
