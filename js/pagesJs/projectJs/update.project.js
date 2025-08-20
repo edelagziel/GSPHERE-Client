@@ -1,6 +1,6 @@
 function getProjectIdFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("id");
+  return params.get("projectId");
 }
 
 document.getElementById("updateProjectForm").onsubmit = async function (e) {
@@ -47,9 +47,8 @@ document.getElementById("updateProjectForm").onsubmit = async function (e) {
     } else {
       // הצג מידע מקסימלי לדיבאג
       const serverMsg = result?.error || result?.message || raw || "Unknown server error";
-      msgDiv.innerHTML = `<div class="alert alert-danger">
-        Error ${res.status}: ${res.statusText}<br>${serverMsg}
-      </div>`;
+      msgDiv.innerHTML = `<div class="alert alert-danger">${serverMsg}</div>`;
+
       console.error("Update failed:", { status: res.status, statusText: res.statusText, result, raw, sent: data });
     }
   } catch (err) {

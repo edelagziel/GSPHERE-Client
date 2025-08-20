@@ -1,16 +1,14 @@
-/* sidebar */
 #sidebar-placeholder {
   position: fixed;
-  top: 56px;    /* גובה navbar! */
+  top: 56px;
   left: 0;
   width: 220px;
-  height: calc(100vh - 56px); /* כל הגובה פחות ה-navbar */
+  height: calc(100vh - 56px);
   background: #f8f9fa;
   border-right: 1px solid #e0e0e0;
   z-index: 1000;
   padding-top: 1.5rem;
 }
-/* navbar */
 #navbar-placeholder {
   position: fixed;
   top: 0;
@@ -18,15 +16,12 @@
   width: 100vw;
   z-index: 1100;
 }
-/* התוכן הראשי מתחיל אחרי ה-sidebar וגם אחרי ה-navbar */
 .main-content {
   margin-left: 220px;
-  padding-top: 72px; /* מעל גובה navbar! */
+  padding-top: 72px;
   min-height: 100vh;
-  background: #f5f6fa;
+  /* אין רקע פה! */
 }
-
-/* ב-responsive — sidebar נהיה צר/נעלם */
 @media (max-width: 991px) {
   #sidebar-placeholder {
     width: 100px;
@@ -45,10 +40,4 @@
     padding-top: 72px;
   }
 }
-body {
-    margin-left: 220px;
-  }
-  main {
-    margin-left: 220px;
-  }
-    
+/* אל תזיז את body או main כלל! */

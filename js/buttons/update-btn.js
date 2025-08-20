@@ -6,14 +6,7 @@ export function setupUpdateProjectButton()
     if (btn)
      {
       const projectId = btn.getAttribute("data-id");
-      window.location.href = `update.project.html?id=${projectId}`;
+      window.location.href = `update.project.html?projectId=${projectId}`;
     }
   });
 }
-
-
-
-
-
-
-

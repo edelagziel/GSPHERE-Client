@@ -1,0 +1,101 @@
+.project-card-gaming {
+    background: linear-gradient(135deg, #20113c 70%, #34296b 100%);
+    color: #ede9fe;
+    border-radius: 24px;
+    box-shadow: 0 6px 32px 0 #7c3aed44, 0 1.5px 24px 0 #60a5fa25;
+    border: 2px solid #8b5cf622;
+    transition: transform 0.15s, box-shadow 0.15s;
+    overflow: hidden;
+    min-width: 280px;
+}
+.project-card-gaming:hover {
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 12px 36px #a78bfa55, 0 2px 32px #6366f188;
+}
+
+.project-card-gaming .card-title {
+    color: #a78bfa;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+}
+
+.project-card-gaming .card-text,
+.project-card-gaming ul,
+.project-card-gaming li {
+    color: #e0e7ff;
+}
+
+/* --- כפתורים --- */
+.project-card-gaming .btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    min-width: 80px;
+    transition: background 0.15s, color 0.15s, box-shadow 0.13s;
+}
+
+.project-card-gaming .btn-outline-primary {
+    color: #a78bfa;
+    border-color: #a78bfa;
+    background: transparent;
+}
+.project-card-gaming .btn-outline-primary:hover,
+.project-card-gaming .btn-outline-primary:focus {
+    background: #7c3aed;
+    color: #fff;
+    border-color: #7c3aed;
+    box-shadow: 0 1px 8px #a78bfa66;
+}
+
+.project-card-gaming .btn-outline-danger {
+    color: #f43f5e;
+    border-color: #f43f5e;
+    background: transparent;
+}
+.project-card-gaming .btn-outline-danger:hover,
+.project-card-gaming .btn-outline-danger:focus {
+    background: #f43f5e;
+    color: #fff;
+    border-color: #f43f5e;
+}
+
+.project-card-gaming .btn-outline-warning {
+    color: #fbbf24;
+    border-color: #fbbf24;
+    background: transparent;
+}
+.project-card-gaming .btn-outline-warning:hover,
+.project-card-gaming .btn-outline-warning:focus {
+    background: #fbbf24;
+    color: #20113c;
+    border-color: #fbbf24;
+}
+
+/* קישורים */
+.project-card-gaming a {
+    color: #60a5fa;
+    transition: color 0.15s;
+}
+.project-card-gaming a:hover {
+    color: #fbbf24;
+    text-decoration: underline;
+}
+
+/* טקסט משני */
+.project-card-gaming .text-muted {
+    color: #b5b5c5 !important;
+}
+/* --- Dashboard Cards --- */
+.dashboard-card {
+    background: linear-gradient(120deg, #a78bfa 65%, #7c3aed 100%);
+    color: #f4f0ff;
+    border: 1.5px solid #b9aaff !important;
+    border-radius: 2.2rem !important;
+    box-shadow: 0 2px 22px #a78bfa22;
+    
+  }
+  
+  
+

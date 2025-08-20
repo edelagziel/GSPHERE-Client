@@ -1,8 +1,3 @@
-
-// Add card-hover-scale class for card style
-
-
-
 export function createProjectCard(project, stageText, visibilityText, createdAt, imageHtml) 
 {
     const cardId = `project-card-${project.id}`;
@@ -10,10 +5,10 @@ export function createProjectCard(project, stageText, visibilityText, createdAt,
     const isLong = (project.description?.length || 0) > 60;
 
     return `
-      <div class="card shadow-sm project-card flex-fill card-hover-scale" id="${cardId}">
+      <div class="card shadow-none project-card-gaming flex-fill mb-4" id="${cardId}">
         ${imageHtml}
         <div class="card-body">
-          <h5 class="card-title mb-2">${project.title}</h5>
+          <h5 class="card-title mb-2"><i class="bi bi-controller me-2"></i>${project.title}</h5>
           <p class="card-text mb-2" id="desc-short-${project.id}">
             ${shortDesc}${isLong ? '... ' : ''}
             ${isLong ? `<a href="#" class="show-more" data-id="${project.id}">Show more</a>` : ''}

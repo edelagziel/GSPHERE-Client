@@ -1,0 +1,23 @@
+/* ---- footer & sticky layout ---- */
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  @media (max-width: 991px) {
+    body { margin-left: 100px; }
+  }
+  @media (max-width: 600px) {
+    body { margin-left: 0; }
+  }
+  .main-content {
+    flex: 1 0 auto;
+  }
+  .footer, #footer-placeholder {
+    margin-top: auto;
+  }
+  

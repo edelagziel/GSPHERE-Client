@@ -1,0 +1,61 @@
+body.back {
+    background: radial-gradient(circle at 50% 0,#a78bfa 10%,#4f378b 90%);
+    min-height: 100vh;
+  }
+  .profile-card-gaming {
+    border-radius: 2.2rem;
+    background: rgba(30,20,60,0.96);
+    box-shadow: 0 8px 48px #a78bfa26, 0 1.5px 24px #60a5fa22;
+    border: 0;
+  }
+  .profile-title-glow {
+    color: #a78bfa;
+    text-shadow: 0 2px 16px #8b5cf6;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+  }
+  .profile-card-gaming .form-label,
+  .profile-card-gaming label {
+    color: #e0e0f6;
+    font-weight: 500;
+  }
+  .profile-card-gaming .form-control,
+  .profile-card-gaming .form-select {
+    background: #2a2250;
+    border: 1.5px solid #6d28d9;
+    color: #f5f3ff;
+    border-radius: 0.7rem;
+    font-weight: 500;
+  }
+  .profile-card-gaming .form-control:focus,
+  .profile-card-gaming .form-select:focus {
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 0.15rem #a78bfa44;
+    background: #372870;
+    color: #fff;
+  }
+  .profile-card-gaming .btn-save {
+    background: linear-gradient(90deg, #a78bfa, #60a5fa 80%);
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    box-shadow: 0 2px 12px #a78bfa26;
+    transition: filter 0.15s;
+    letter-spacing: 1px;
+  }
+  .profile-card-gaming .btn-save:hover {
+    filter: brightness(0.93);
+  }
+  .profile-card-gaming .btn-outline-secondary {
+    border-color: #a78bfa;
+    color: #a78bfa;
+    font-weight: 600;
+    background: transparent;
+    transition: background 0.12s, color 0.12s;
+  }
+  .profile-card-gaming .btn-outline-secondary:hover,
+  .profile-card-gaming .btn-outline-secondary:focus {
+    background: #a78bfa;
+    color: #fff;
+  }
+  
