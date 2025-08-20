@@ -1,4 +1,3 @@
-// ../../components/jobCard.js
 export function createJobCard(job, { skillsMap, STATUS_MAP, LOCATION_MAP }) 
 {
     let skillNames = "—";
@@ -15,46 +14,43 @@ export function createJobCard(job, { skillsMap, STATUS_MAP, LOCATION_MAP })
     const statusText = STATUS_MAP[job.status_id] || job.status_id || "Unknown";
     const locationText = LOCATION_MAP[job.location_id] || job.location_id || "—";
   
+    // עדכון למחלקת עיצוב הגיימינג שלך בלבד
     const card = document.createElement("div");
-    card.className = "card h-100 border-primary shadow-sm text-bg-light card-hover-scale";
+    card.className = "card h-100 project-card-gaming shadow-none card-hover-scale";
     card.innerHTML = `
-    <div class="card-body">
-      <h5 class="card-title text-primary fw-bold">${job.title ?? "Untitled Job"}</h5>
-      <p class="card-text">${job.description ?? "No description provided."}</p>
-      <ul class="list-unstyled small">
-        <li><strong>Status:</strong> ${statusText}</li>
-        <li><strong>Location:</strong> ${locationText}</li>
-        <li><strong>Skills:</strong> ${skillNames}</li>
-        <li><strong>Deadline:</strong> ${deadline}</li>
-      </ul>
-      <p class="text-muted mb-2 small">Created at: ${createdAt}</p>
-  
-      <div class="mt-3 d-flex gap-2 flex-wrap">
-        <button 
-          class="btn btn-sm btn-outline-secondary see-candidates-btn" 
-          data-id="${job.id}"
-          data-title="${job.title}">
-          See All Candidates
-        </button>
-  
-        <button 
-          class="btn btn-sm btn-outline-primary update-job-btn" 
-          data-id="${job.id}">
-          Update Job
-        </button>
-  
-        <button 
-          class="btn btn-sm btn-outline-danger delete-job-btn" 
-          data-id="${job.id}">
-          Delete Job
-        </button>
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">${job.title ?? "Untitled Job"}</h5>
+        <p class="card-text flex-grow-1">${job.description ?? "No description provided."}</p>
+        <ul class="list-unstyled small mb-2">
+          <li><strong>Status:</strong> ${statusText}</li>
+          <li><strong>Location:</strong> ${locationText}</li>
+          <li><strong>Skills:</strong> ${skillNames}</li>
+          <li><strong>Deadline:</strong> ${deadline}</li>
+        </ul>
+        <p class="text-muted mb-2 small">Created at: ${createdAt}</p>
+        <div class="mt-auto d-flex gap-2 flex-wrap">
+          <button 
+            class="btn btn-sm btn-outline-secondary see-candidates-btn" 
+            data-id="${job.id}"
+            data-title="${job.title}">
+            See All Candidates
+          </button>
+          <button 
+            class="btn btn-sm btn-outline-primary update-job-btn" 
+            data-id="${job.id}">
+            Update Job
+          </button>
+          <button 
+            class="btn btn-sm btn-outline-danger delete-job-btn" 
+            data-id="${job.id}">
+            Delete Job
+          </button>
+        </div>
       </div>
-    </div>
-  `;
+    `;
   
     const wrapper = document.createElement("div");
-    wrapper.className = "col-12 col-md-10 mx-auto mb-4"; // גורם לכרטיס להיות רחב ומרוכז
+    wrapper.className = "col-12 col-md-10 mx-auto mb-4"; // נשאר רחב כמו קודם
     wrapper.appendChild(card);
     return wrapper;
-  }
-  
+}

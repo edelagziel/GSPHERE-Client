@@ -1,0 +1,59 @@
+.sidebar-gaming {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #a78bfa 0%, #4338ca 100%);
+    box-shadow: 0 8px 32px 0 #7c3aed30;
+    color: #ede9fe;
+  }
+  
+  .sidebar-title {
+    color: #ede9fe;
+    font-family: 'Orbitron', 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    font-size: 1.7rem;
+    text-shadow: 0 2px 16px #a78bfa88;
+    transition: color 0.2s;
+  }
+  .sidebar-title:hover {
+    color: #a78bfa;
+  }
+  
+  .sidebar-divider {
+    border-top: 2px solid #c7d2fe44;
+    opacity: 1;
+  }
+  
+  .sidebar-link {
+    color: #ede9fe !important;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: background 0.16s, color 0.16s, box-shadow 0.15s;
+    padding: 0.65rem 1.1rem;
+  }
+  
+  .sidebar-link.active, .sidebar-link:focus, .sidebar-link:hover {
+    background: linear-gradient(90deg, #7c3aed 30%, #60a5fa 100%);
+    color: #fff !important;
+    box-shadow: 0 2px 12px 0 #6366f155;
+    font-weight: 700;
+  }
+  
+  .btn-gaming-logout {
+    background: linear-gradient(90deg,#f43f5e,#a78bfa 60%);
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.7rem 0;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 18px #f43f5e40;
+    transition: filter 0.2s, background 0.15s;
+  }
+  .btn-gaming-logout:hover {
+    filter: brightness(1.08);
+    background: linear-gradient(90deg,#a78bfa,#f43f5e 60%);
+  }
+  

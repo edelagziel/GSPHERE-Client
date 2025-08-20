@@ -1,50 +1,51 @@
 <!-- components/sidebar.html -->
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light shadow-sm" style="width: 220px; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100;">
-    <a href="../page/recruiter.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">Menu</span>
+<div class="sidebar-gaming d-flex flex-column flex-shrink-0 p-3 shadow-lg"
+     style="width: 220px; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100;">
+  <a href="../page/recruiter.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto fw-bold text-decoration-none sidebar-title">
+    <span class="fs-4">Menu</span>
+  </a>
+  <hr class="sidebar-divider">
+  <ul class="nav nav-pills flex-column mb-auto gap-1">
+    <li class="nav-item">
+      <a href="../page/recruiter.html" class="nav-link sidebar-link active" aria-current="page">
+        My uploaded jobs
+      </a>
+    </li>
+    <!-- <li>
+      <a href="../page/all.applications.html" class="nav-link sidebar-link">
+        all Applications
+      </a>
+    </li>
+    <li>
+      <a href="job.Statistics.html" class="nav-link sidebar-link">
+        job Statistics
+      </a>
+    </li> -->
+    <li>
+      <a href="../page/find.jobs.html" class="nav-link sidebar-link">
+        all posted Jobs
+      </a>
+    </li>
+    <li>
+      <a href="../page/hot.News.html" class="nav-link sidebar-link">
+        hot News
+      </a>
+    </li>
+    <li>
+      <a href="../page/user.profile.html" class="nav-link sidebar-link">
+        My profile
+      </a>
+    </li>
+    <!-- <li>
+      <a href="../page/Notifications.html" class="nav-link sidebar-link">
+        Notifications
+      </a>
+    </li> -->
+  </ul>
+  <hr class="sidebar-divider">
+  <div class="mt-auto">
+    <a href="../index.html" class="btn btn-outline-danger w-100 fw-bold" style="border-radius:0;">
+      Logout
     </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="../page/recruiter.html" class="nav-link active" aria-current="page">
-          My uploaded jobs
-        </a>
-      </li>
-      <li>
-        <a href="../page/all.applications.html" class="nav-link link-dark">
-            all Applications
-          </a>
-      </li>
-      <li>
-        <a href="job.Statistics.html" class="nav-link link-dark">
-          job Statistics
-        </a>
-      </li>
-      <li>
-      
-        <a href="../page/find.jobs.html" class="nav-link link-dark">
-            all posted Jobs
-           </a>
-      </li>
-      <li>
-        <a href="../page/hot.News.html" class="nav-link link-dark">
-           hot News
-          </a>
-      </li>
-      <li>
-        <a href="../page/user.profile.html" class="nav-link link-dark">
-            My profile
-        </a>
-      </li>
-      <li>
-        <a href="../page/Notifications.html" class="nav-link link-dark">
-            Notifications
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div>
-      <a href="../index.html" class="btn btn-outline-danger w-100">Logout</a>
-    </div>
   </div>
-  
+</div>
