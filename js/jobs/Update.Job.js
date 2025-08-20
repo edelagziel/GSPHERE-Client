@@ -17,6 +17,7 @@ function getJobIdFromUrl() {
     // שליפה ראשונית של פרטי המשרה
     try {
       const res = await fetch(`${CONFIG.API_BASE_URL}/jobs/${jobId}`, {
+        method: "GET",
         credentials: "include"
       });
   
