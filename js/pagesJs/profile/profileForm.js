@@ -8,11 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // הצגת שם הקובץ שנבחר לקורות חיים
   if (cvFileInput && cvFilenameInput) {
     cvFileInput.addEventListener("change", () => {
-      if (cvFileInput.files.length > 0) {
-        cvFilenameInput.value = cvFileInput.files[0].name;
-      } else {
-        cvFilenameInput.value = "No file selected";
-      }
+      cvFilenameInput.value = cvFileInput.files.length > 0
+        ? cvFileInput.files[0].name
+        : "No file selected";
     });
   }
 
@@ -29,10 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         credentials: "include"
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to upload file");
-      }
-
+      if (!res.ok) throw new Error("Failed to upload file");
       const data = await res.json();
       return data.url;
     };
@@ -40,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let profile_picture_url = profileImgEl?.src || "";
     let cv_url = "";
 
-    // נעלה תמונת פרופיל אם נבחר קובץ חדש
     if (profileFileInput.files.length > 0) {
       try {
         profile_picture_url = await uploadFile(profileFileInput.files[0]);
@@ -50,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // נעלה קובץ קורות חיים אם נבחר
     if (cvFileInput && cvFileInput.files.length > 0) {
       try {
         cv_url = await uploadFile(cvFileInput.files[0]);
@@ -60,16 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const profileData = {
-      bio: form.querySelector("textarea").value,
-      cv_url,
-      location: form.querySelector("input[placeholder='Your location']").value,
-      experience: form.querySelector("input[placeholder='Your experience']").value,
-      profile_picture_url,
-      website_url: form.querySelector("input[placeholder='Your website']").value,
-      github_url: form.querySelector("input[placeholder='GitHub profile']").value,
-      linkedin_url: form.querySelector("input[placeholder='LinkedIn profile']").value
-    };
+    // קח את כל השדות מהטופס באופן דינמי
+    const formData = new FormData(form);
+    const profileData = Object.fromEntries(formData.entries());
+
+    // הוסף את כתובות הקבצים שהעלית
+    profileData.profile_picture_url = profile_picture_url;
+    profileData.cv_url = cv_url;
 
     try {
       const res = await fetch(`${CONFIG.API_BASE_URL}/profile`, {
@@ -82,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const contentType = res.headers.get("content-type") || "";
-
       if (!res.ok) {
         const errMsg = contentType.includes("application/json")
           ? (await res.json()).message
