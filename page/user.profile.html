@@ -11,7 +11,6 @@
   <link href="../css/nav.css" rel="stylesheet">
   <link href="../css/global-bg.css" rel="stylesheet">
   <link href="../css/sidebar.css" rel="stylesheet">
-  <!-- כאן מחברים את קובץ ה־CSS החדש שלך -->
   <link href="../css/profile-card-gaming.css" rel="stylesheet">
 </head>
 <body class="back">
@@ -33,7 +32,8 @@
               <form>
                 <div class="text-center mb-4">
                   <div class="d-flex flex-column align-items-center gap-2">
-                    <img id="profile-picture" src="https://plus.unsplash.com/premium_photo-1677094310956-7f88ae5f5c6b?q=80&w=1160&auto=format&fit=crop"
+                    <img id="profile-picture" 
+                         src="https://plus.unsplash.com/premium_photo-1677094310956-7f88ae5f5c6b?q=80&w=1160&auto=format&fit=crop"
                          alt="Profile Picture"
                          class="rounded-circle border border-3 border-primary"
                          style="width:120px; height:120px; object-fit:cover;">
@@ -41,47 +41,47 @@
                       <button type="button" class="btn btn-outline-secondary btn-sm" id="open-camera-btn">📷 Take Picture</button>
                       <button type="button" class="btn btn-outline-secondary btn-sm" id="select-file-btn">🖼️ From Gallery</button>
                     </div>
-                    <input type="file" id="file-input" accept="image/*" class="d-none">
+                    <input type="file" id="file-input" name="profile_picture" accept="image/*" class="d-none">
                   </div>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Bio</label>
-                  <textarea class="form-control" rows="2" placeholder="Tell us about yourself..."></textarea>
+                  <textarea class="form-control" name="bio" rows="2" placeholder="Tell us about yourself..."></textarea>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Upload CV</label>
                   <div class="input-group">
-                    <input type="file" id="cv-file" class="d-none">
+                    <input type="file" id="cv-file" name="cv" class="d-none">
                     <input type="text" class="form-control" id="cv-filename" placeholder="No file selected" disabled>
                     <button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('cv-file').click()">Choose File</button>
                   </div>
                 </div>
-                
+
                 <div class="mb-3">
                   <label class="form-label">Location</label>
-                  <input type="text" class="form-control" value="Tel Aviv" placeholder="Your location">
+                  <input type="text" class="form-control" name="location" placeholder="Your location" value="Tel Aviv">
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Experience</label>
-                  <input type="text" class="form-control" value="3 years of backend development with Node.js and PostgreSQL." placeholder="Your experience">
+                  <input type="text" class="form-control" name="experience" placeholder="Your experience" value="3 years of backend development with Node.js and PostgreSQL.">
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">Website</label>
-                  <input type="url" class="form-control" value="https://edenportfolio.dev" placeholder="Your website">
+                  <input type="url" class="form-control" name="website_url" placeholder="Your website" value="https://edenportfolio.dev">
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">GitHub</label>
-                  <input type="url" class="form-control" value="https://github.com/eden" placeholder="GitHub profile">
+                  <input type="url" class="form-control" name="github_url" placeholder="GitHub profile" value="https://github.com/eden">
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label">LinkedIn</label>
-                  <input type="url" class="form-control" value="https://linkedin.com/in/eden-dev" placeholder="LinkedIn profile">
+                  <input type="url" class="form-control" name="linkedin_url" placeholder="LinkedIn profile" value="https://linkedin.com/in/eden-dev">
                 </div>
 
                 <div class="text-center mt-4">
@@ -94,6 +94,7 @@
       </div>
     </div>
   </div>
+
   <div id="footer-placeholder"></div>
 
   <!-- Scripts -->
@@ -107,4 +108,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-<!-- fsdsdf -->
