@@ -1,9 +1,5 @@
 // js/jobs/update.job.js
-function getJobIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("jobId");
-  }
-  
+
   window.addEventListener("DOMContentLoaded", async () => {
     const jobId = getJobIdFromUrl();
     if (!jobId) {
@@ -15,7 +11,8 @@ function getJobIdFromUrl() {
     const resultDiv = document.getElementById("job-result");
   
     // שליפה ראשונית של פרטי המשרה
-    try {
+    try 
+    {
       const res = await fetch(`${CONFIG.API_BASE_URL}/jobs/${jobId}`, {
         method: "GET",
         credentials: "include"
@@ -75,4 +72,10 @@ function getJobIdFromUrl() {
       }
     };
   });
+
+  
+  function getJobIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("jobId");
+  }
   
