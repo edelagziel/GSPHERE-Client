@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const res = await fetch(`${CONFIG.API_BASE_URL}/uplodeFile`, {
+      const res = await fetch(`${CONFIG.API_BASE_URL}/uploadFile`, {
         method: "POST",
         body: formData,
         credentials: "include"
