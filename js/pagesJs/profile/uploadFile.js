@@ -5,7 +5,8 @@ export async function uploadFile(file) {
   
     const res = await fetch(`${CONFIG.API_BASE_URL}/uplodeFile`, {
       method: "POST",
-      body: formData
+      body: formData,
+      credentials: "include"
     });
   
     if (!res.ok) {

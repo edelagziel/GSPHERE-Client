@@ -1,3 +1,5 @@
+import { uploadFile } from "./uploadFile.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   alert("🔄 DOMContentLoaded – the form is ready!");
   const form = document.querySelector("form");
@@ -19,28 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   form.onsubmit = async function (e) {
     e.preventDefault();
     alert("🚀 Form submitted!");
-
-    const uploadFile = async (file) => {
-      alert(`⬆️ Trying to upload file: ${file.name}`);
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const res = await fetch(`${CONFIG.API_BASE_URL}/uplodeFile`, {
-        method: "POST",
-        body: formData,
-        credentials: "include"
-      });
-
-      if (!res.ok) {
-        const errorText = await res.text();
-        alert("❌ Upload error: " + errorText);
-        throw new Error("Failed to upload file");
-      }
-
-      const data = await res.json();
-      alert(`✅ File uploaded successfully: ${data.url}`);
-      return data.url;
-    };
 
     let profile_picture_url = profileImgEl?.src || "";
     let cv_url = "";
