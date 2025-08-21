@@ -1,23 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+  alert("🔄 DOMContentLoaded – the form is ready!");
   const form = document.querySelector("form");
   const profileImgEl = document.getElementById("profile-picture");
   const profileFileInput = document.getElementById("file-input");
   const cvFileInput = document.getElementById("cv-file");
   const cvFilenameInput = document.getElementById("cv-filename");
 
-  // הצגת שם הקובץ שנבחר לקורות חיים
   if (cvFileInput && cvFilenameInput) {
     cvFileInput.addEventListener("change", () => {
-      cvFilenameInput.value = cvFileInput.files.length > 0
+      const fileName = cvFileInput.files.length > 0
         ? cvFileInput.files[0].name
         : "No file selected";
+      cvFilenameInput.value = fileName;
+      alert(`📄 CV file selected: ${fileName}`);
     });
   }
 
   form.onsubmit = async function (e) {
     e.preventDefault();
+    alert("🚀 Form submitted!");
 
     const uploadFile = async (file) => {
+      alert(`⬆️ Trying to upload file: ${file.name}`);
       const formData = new FormData();
       formData.append("file", file);
 
@@ -27,8 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
         credentials: "include"
       });
 
-      if (!res.ok) throw new Error("Failed to upload file");
+      if (!res.ok) {
+        const errorText = await res.text();
+        alert("❌ Upload error: " + errorText);
+        throw new Error("Failed to upload file");
+      }
+
       const data = await res.json();
+      alert(`✅ File uploaded successfully: ${data.url}`);
       return data.url;
     };
 
@@ -37,29 +47,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (profileFileInput.files.length > 0) {
       try {
+        alert("🖼️ Trying to upload profile picture...");
         profile_picture_url = await uploadFile(profileFileInput.files[0]);
       } catch (err) {
-        alert("Error uploading profile picture: " + err.message);
+        alert("⚠️ Error uploading profile picture: " + err.message);
         return;
       }
+    } else {
+      alert("📷 No new profile picture selected");
     }
 
     if (cvFileInput && cvFileInput.files.length > 0) {
       try {
+        alert("📁 Trying to upload CV file...");
         cv_url = await uploadFile(cvFileInput.files[0]);
       } catch (err) {
-        alert("Error uploading CV: " + err.message);
+        alert("⚠️ Error uploading CV: " + err.message);
         return;
       }
+    } else {
+      alert("📄 No CV file selected");
     }
 
-    // קח את כל השדות מהטופס באופן דינמי
     const formData = new FormData(form);
     const profileData = Object.fromEntries(formData.entries());
 
-    // הוסף את כתובות הקבצים שהעלית
     profileData.profile_picture_url = profile_picture_url;
     profileData.cv_url = cv_url;
+
+    alert("📤 Sending updated data to server...");
 
     try {
       const res = await fetch(`${CONFIG.API_BASE_URL}/profile`, {
@@ -76,14 +92,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const errMsg = contentType.includes("application/json")
           ? (await res.json()).message
           : await res.text();
+        alert("❌ Profile save failed: " + errMsg);
         throw new Error(errMsg || "Profile update failed");
       }
 
       const result = await res.json();
-      alert("Profile updated successfully!");
+      console.log("✅ Profile update response:", result);
+      alert("✅ Profile updated successfully!");
     } catch (err) {
       console.error("Error updating profile:", err);
-      alert("Failed to update profile: " + err.message);
+      alert("❌ Error saving profile: " + err.message);
     }
   };
 });
