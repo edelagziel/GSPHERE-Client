@@ -1,4 +1,3 @@
-// ../js/profile/edit.profile.js
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   const profileImgEl = document.getElementById("profile-picture");
@@ -6,12 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cvFileInput = document.getElementById("cv-file");
   const cvFilenameInput = document.getElementById("cv-filename");
 
-  // הצגת שם קובץ קורות חיים שנבחר
+  // הצגת שם הקובץ שנבחר לקורות חיים
   if (cvFileInput && cvFilenameInput) {
     cvFileInput.addEventListener("change", () => {
-      cvFilenameInput.value = cvFileInput.files.length > 0
-        ? cvFileInput.files[0].name
-        : "No file selected";
+      if (cvFileInput.files.length > 0) {
+        cvFilenameInput.value = cvFileInput.files[0].name;
+      } else {
+        cvFilenameInput.value = "No file selected";
+      }
     });
   }
 
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData();
       formData.append("file", file);
 
-      const res = await fetch(`${CONFIG.API_BASE_URL}/uploadFile`, {
+      const res = await fetch(`${CONFIG.API_BASE_URL}/uplodeFile`, {
         method: "POST",
         body: formData,
         credentials: "include"
@@ -39,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let profile_picture_url = profileImgEl?.src || "";
     let cv_url = "";
 
-    // העלאת תמונת פרופיל אם נבחרה
-    if (profileFileInput?.files.length > 0) {
+    // נעלה תמונת פרופיל אם נבחר קובץ חדש
+    if (profileFileInput.files.length > 0) {
       try {
         profile_picture_url = await uploadFile(profileFileInput.files[0]);
       } catch (err) {
@@ -49,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // העלאת קובץ קורות חיים אם נבחר
-    if (cvFileInput?.files.length > 0) {
+    // נעלה קובץ קורות חיים אם נבחר
+    if (cvFileInput && cvFileInput.files.length > 0) {
       try {
         cv_url = await uploadFile(cvFileInput.files[0]);
       } catch (err) {
@@ -59,11 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // קבלת כל שדות הטופס כ־Object
-    const formData = new FormData(form);
-    const profileData = Object.fromEntries(formData.entries());
-    profileData.cv_url = cv_url;
-    profileData.profile_picture_url = profile_picture_url;
+    const profileData = {
+      bio: form.querySelector("textarea").value,
+      cv_url,
+      location: form.querySelector("input[placeholder='Your location']").value,
+      experience: form.querySelector("input[placeholder='Your experience']").value,
+      profile_picture_url,
+      website_url: form.querySelector("input[placeholder='Your website']").value,
+      github_url: form.querySelector("input[placeholder='GitHub profile']").value,
+      linkedin_url: form.querySelector("input[placeholder='LinkedIn profile']").value
+    };
 
     try {
       const res = await fetch(`${CONFIG.API_BASE_URL}/profile`, {
@@ -84,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(errMsg || "Profile update failed");
       }
 
+      const result = await res.json();
       alert("Profile updated successfully!");
     } catch (err) {
       console.error("Error updating profile:", err);
