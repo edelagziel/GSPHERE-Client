@@ -1,27 +1,30 @@
 window.addEventListener("DOMContentLoaded", function () {
   fetch("../Compponenet/navbar.html")
     .then(response => response.text())
-    .then(html => 
-      {
+    .then(html => {
       const placeholder = document.getElementById("navbar-placeholder");
-      if (placeholder) 
-      {
+      if (placeholder) {
         placeholder.innerHTML = html;
 
-        // רק אחרי שה־navbar נטען – מוסיפים את ההאזנה ללחיצה על הלוגו
+        // 👇 אתחול רכיבי Bootstrap דינמיים (כולל collapse/burger!)
+        setTimeout(() => {
+          document.querySelectorAll('.collapse').forEach(c => {
+            if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+              // יאתחל את כל האלמנטים שנטענו עכשיו
+              new bootstrap.Collapse(c, { toggle: false });
+            }
+          });
+        }, 0);
+
+        // טיפול בלחיצה על הלוגו (אחרי שה-HTML הוזרק)
         const logo = document.querySelector(".Nav-GSPHERE-logo");
         if (logo) {
-          logo.addEventListener("click", () =>
-          {
+          logo.addEventListener("click", () => {
             const role = localStorage.getItem("role");
-
-            if (role === "2") 
-            {
+            if (role === "2") {
               // Recruiter
               window.location.href = "../page/recruiter.html";
-            } 
-            else 
-            {
+            } else {
               // Regular user or missing role
               window.location.href = "../page/project.html";
             }
@@ -29,8 +32,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
       }
     })
-    .catch(err => 
-    {
+    .catch(err => {
       console.error("Failed to load navbar:", err);
     });
 });
