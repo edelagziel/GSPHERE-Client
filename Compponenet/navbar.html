@@ -10,30 +10,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- רגיל: רק about/contact/future בדסקטופ -->
+      <!-- רגיל: רק בדסקטופ -->
       <ul class="navbar-nav ms-auto d-none d-lg-flex">
         <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/About.html">About</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/contact.html">Contact Info</a></li>
         <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/future.html">What's Coming</a></li>
       </ul>
 
-      <!-- במובייל: מופיע *רק* בבורגר כל הרשימה -->
-      <ul class="navbar-nav ms-auto d-lg-none">
-        <li class="nav-item"><a class="nav-link" href="project.html">My Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="../page/find.project.html">Find Partners\Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="../page/find.jobs.html">Find Jobs</a></li>
-        <li class="nav-item"><a class="nav-link" href="../page/hot.News.html">Hot News</a></li>
-        <li class="nav-item"><a class="nav-link" href="../page/user.profile.html">My Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/About.html">About</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/contact.html">Contact Info</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold text-white px-3" href="../page/future.html">What's Coming</a></li>
-        <li class="nav-item mt-2">
-          <a href="../index.html" class="btn btn-outline-danger fw-bold w-100" style="border-radius:0;">
-            Logout
-          </a>
-        </li>
-      </ul>
+      <!-- במובייל: ריק, נבנה אותו בדינמיות מה־sidebar.js -->
+      <ul id="mobileNavList" class="navbar-nav ms-auto d-lg-none"></ul>
     </div>
   </div>
 </nav>
