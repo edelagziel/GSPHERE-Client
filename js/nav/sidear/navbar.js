@@ -36,3 +36,4 @@ window.addEventListener("DOMContentLoaded", function () {
       console.error("Failed to load navbar:", err);
     });
 });
+//
