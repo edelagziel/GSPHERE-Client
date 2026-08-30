@@ -1,82 +1,151 @@
-# GSPHERE - Client
+# GSPHERE Client
 
-Frontend for **GSPHERE**, the Gaming Collaboration Hub platform — enabling game developers, designers, musicians, and other creatives to connect, build teams, manage projects, and collaborate efficiently.
+Frontend for **GSPHERE**, a gaming collaboration platform designed to help developers, designers, musicians, recruiters, and other creators discover projects, build teams, publish opportunities, and manage collaboration around game development.
 
-> 🔗 This is the client-side of the project. The backend is available in the [GSPHERE-Server](https://github.com/edelagziel/GSPHERE-Server) repository.
+This repository contains the browser client. The backend lives in [GSPHERE-Server](https://github.com/edelagziel/GSPHERE-Server).
 
----
+## Project at a Glance
 
-## 🚀 Tech Stack
+GSPHERE is a two-repository full-stack project:
 
-- ✅ HTML5  
-- 🎨 CSS3 + custom styles  
-- ⚙️ JavaScript (Vanilla)  
-- 🎛 Bootstrap 5.3.3  
-- 🌐 Fetch API for server communication  
-- 🍪 Cookie-based authentication (login/register)
-
----
-
-## 📁 Project Structure
-
+```text
+Browser Client
+HTML / CSS / Vanilla JavaScript / Bootstrap
+        |
+        | Fetch API + cookie credentials
+        v
+GSPHERE Server
+Node.js / Express / JWT / PostgreSQL
+        |
+        +--> Cloudinary file uploads
+        +--> Gaming news integration/cache
 ```
+
+The client is intentionally implemented without a frontend framework. UI behavior, API requests, rendering, authentication flows, project management, job flows, and reusable page components are handled with modular JavaScript and Bootstrap-based layouts.
+
+## Main Capabilities
+
+- User registration, login, and logout flows.
+- Candidate and recruiter-oriented views.
+- Project discovery, creation, editing, membership, and role flows.
+- Job posting and job discovery interfaces.
+- Candidate application and recruiter management views.
+- User profile editing and image/CV upload flows.
+- Gaming news views.
+- Dynamic reusable project, job, member, candidate, and news cards.
+- Shared navbar/sidebar components loaded across multiple pages.
+
+## Tech Stack
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Bootstrap 5
+- Bootstrap Icons
+- Fetch API
+- Cookie-based authenticated requests
+
+Backend technologies such as Express, PostgreSQL, JWT, bcrypt, Multer, and Cloudinary are implemented in the [server repository](https://github.com/edelagziel/GSPHERE-Server).
+
+## Client Architecture
+
+The frontend is organized by feature rather than around a framework component model.
+
+```text
 GSPHERE-Client/
-├── js/               # JavaScript files (fetch, render, auth, etc.)
-├── Mycss/            # Custom CSS styling
-├── page/             # All HTML pages (home, login, register, profile, etc.)
-├── svg/              # Icon SVGs
-├── Compnonenet/      # Reusable components (navbar, footer, etc.)
-├── Temp/             # Temporary files or future development
-├── index.html        # Main landing page
-├── index copy.html   # Backup or alt version
+├── index.html                 Main entry page
+├── Compponenet/               Shared HTML components
+├── css/                       Application styling
+├── js/
+│   ├── buttons/               Button/event behaviors
+│   ├── cards/                 Reusable rendering modules
+│   ├── config/                API environment configuration
+│   ├── data/                  Client-side data helpers
+│   ├── jobs/                  Job-related logic
+│   ├── nav/sidear/            Navigation/sidebar loading
+│   ├── pagesJs/               Page-specific behavior
+│   └── utils/                 Shared utilities
+├── page/                      Application HTML pages
+├── svg/                       SVG assets
+└── Temp/                      Legacy/development artifacts
 ```
 
----
+Some directory names reflect the original student-project structure and are intentionally left unchanged while the application is being preserved and documented. Renaming them can affect page paths and imports and is therefore treated separately from documentation cleanup.
 
-## ✨ Features
+## API Configuration
 
-- 🔐 **Authentication system** – login & registration using cookies  
-- 🧠 **Role-based access** – recruiter / candidate views  
-- 🧱 **Modular JS** – split into logical parts (fetch, events, rendering)  
-- 🧭 **Responsive Bootstrap layout**  
-- 🎴 **Dynamic project/job cards rendering**  
-- ⚡ Fast & clean UI with reusable HTML components
+The API base URL is defined in:
 
----
+```text
+js/config/config.js
+```
 
-## ⚙️ How to Run Locally
+Current behavior:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/edelagziel/GSPHERE-Client.git
-   ```
+- `localhost` / `127.0.0.1` -> local server on port `3000`
+- other hosts -> deployed GSPHERE server
 
-2. Open the project in VSCode.
+The configured API prefix is `/api`.
 
-3. Right-click `index.html` and select:  
-   > `Open with Live Server` (recommended extension)
+Authenticated requests generally use:
 
-   ⚠️ `fetch(...)` will **not work with file:// path** – a local server is required!
+```js
+credentials: "include"
+```
 
-4. Make sure the [GSPHERE-Server](https://github.com/edelagziel/GSPHERE-Server) is running on the backend.
+so the browser can send the authentication cookie managed by the backend.
 
----
+## Main Product Areas
 
-## 📌 To-Do / Improvements
+### Projects
+Users can browse projects, create and edit projects, enter project rooms, and interact with project-member flows.
 
-- [ ] Add loading spinners / UX indicators  
-- [ ] Improve mobile responsiveness for dashboard  
-- [ ] Add modular import/export using ES6  
-- [ ] Improve error handling and form validation  
-- [ ] Add basic accessibility (a11y) improvements
+### Jobs and Recruiting
+Recruiter-facing pages support publishing and managing job opportunities, while candidate-facing pages support job discovery and application flows.
 
----
+### Profiles
+Profile pages load and update user details and integrate with the backend upload flow for profile/CV media.
 
-## 👥 Contributors
+### News
+The client displays gaming-related news supplied through the backend news API.
 
-- 👤 [Eden Lagziel](https://github.com/edelagziel)  
+## Running Locally
 
+1. Clone the client:
 
-## 📝 License
+```bash
+git clone https://github.com/edelagziel/GSPHERE-Client.git
+cd GSPHERE-Client
+```
 
-This project is licensed under the MIT License.
+2. Run the [GSPHERE-Server](https://github.com/edelagziel/GSPHERE-Server) locally on port `3000`.
+
+3. Serve this repository through a local HTTP server. For example, VS Code **Live Server** can be used.
+
+Do not open the application directly with `file://`; browser `fetch()` behavior requires the client to be served over HTTP.
+
+The backend currently permits selected local development origins, including common localhost Live Server/Vite ports.
+
+## Related Repository
+
+### GSPHERE Server
+
+[https://github.com/edelagziel/GSPHERE-Server](https://github.com/edelagziel/GSPHERE-Server)
+
+The server provides authentication, protected REST APIs, PostgreSQL persistence, project/member management, jobs/applications, profiles, uploads, and news functionality.
+
+## Current Project Status
+
+GSPHERE is an existing working student full-stack project currently undergoing **portfolio-focused documentation and hardening**. The cleanup strategy prioritizes preserving working behavior over broad refactoring.
+
+Known areas being reviewed separately include authentication cookie hardening, authorization checks, upload validation, automated tests, legacy naming, and repository hygiene. These items are not presented here as completed work.
+
+## Contributors
+
+- [Eden Lagziel](https://github.com/edelagziel)
+
+The backend repository also documents additional project contributors.
+
+## License
+
+This repository is distributed under the MIT License.
